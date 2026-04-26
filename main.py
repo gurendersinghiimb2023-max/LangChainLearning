@@ -29,7 +29,7 @@ Musk's political activities, statements and views have made him a polarizing fig
     #invoke takes a dictionary of input variables
     #input variables are the variables that are used to run the chain
     summary = summary_chain.invoke({"information": information})
-
+    #prints the content of the summary
     print(summary.content)
 
 
