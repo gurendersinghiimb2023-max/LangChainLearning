@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
+from langchain_ollama import ChatOllama
 
 load_dotenv()
 def main():
@@ -24,7 +25,8 @@ Musk's political activities, statements and views have made him a polarizing fig
     #LCEL - Langchain Expression Language - This is way to compose prompt template and LLM together
     #| is the pipe operator, which creats Runnable Sequence
     #Runnable Sequence is a sequence of runnables, which are objects that can be run. It is a way to compose prompt template and LLM together.
-    summary_chain = summary_prompt | ChatOpenAI(model="gpt-4o-mini", temperature=0)
+    #summary_chain = summary_prompt | ChatOpenAI(model="gpt-4o-mini", temperature=0)
+    summary_chain = summary_prompt | ChatOllama(model="Gemma3:270m", temperature=0)
     #invoke is a method that runs the chain
     #invoke takes a dictionary of input variables
     #input variables are the variables that are used to run the chain
